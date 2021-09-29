@@ -19,7 +19,7 @@ def reader(filename):
         month11 = re.findall("Aug/1995", http_access_log)
         month12 = re.findall("Sep/1995", http_access_log)
         month0 = re.findall("Oct/1995", http_access_log)
-        requests_per_month = month1, month2, month3, month4, month5, month6, month7, month8, month9, month10, month11, month12, month0
+        requests_per_month = month1 + month2 + month3 + month4 + month5 + month6 + month7 + month8 + month9 + month10 + month11 + month12 + month0
         return(requests_per_month)
 
 def count(requests_per_month):
