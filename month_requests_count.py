@@ -18,12 +18,12 @@ def reader(filename):
         month10 = re.findall("Jul/1995", http_access_log)
         month11 = re.findall("Aug/1995", http_access_log)
         month12 = re.findall("Sep/1995", http_access_log)
-        month0 = re.finall("Oct/1995", http_access_log)
+        month0 = re.findall("Oct/1995", http_access_log)
         requests_per_month = month1, month2, month3, month4, month5, month6, month7, month8, month9, month10, month11, month12, month0
-        print(requests_per_month)
+        return(requests_per_month)
 
 def count(requests_per_month):
-    print(Counter(requests_per_month))
+    return Counter(requests_per_month)
 
 def write_csv(counter):
     with open("requests_per_month.csv", "w") as csvfile:
@@ -35,3 +35,7 @@ def write_csv(counter):
 
         for item in counter:
             writer.writerow( (item, counter[item]) )
+
+if __name__ == "__main__":
+    write_csv(count(reader("http_access_log.txt")))
+    print("hello world")
