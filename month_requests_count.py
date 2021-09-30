@@ -38,4 +38,3 @@ def write_csv(counter):
 
 if __name__ == "__main__":
     write_csv(count(reader("http_access_log.txt")))
-    print("hello world")
