@@ -13,14 +13,13 @@ for line in main_file:
     if statusCode:
         if 300 <= int(statusCode[0][6]) < 400:
             statusCode3xx += 1
-            totalNumberOfRequests += 1
         elif int(statusCode[0][6]) >= 400: 
             statusCode4xx += 1
-            totalNumberOfRequests += 1
     else:
         print('No match found')
-        totalNumberOfRequests += 1
+    totalNumberOfRequests += 1
 
+print(totalNumberOfRequests)
 question_3_and_4 = open("not_successful_and_redirected_requests.csv", "w")
 
 question_3_and_4.write("Percentage of Requests Not Successful,Percentage of Requests That Redirected\n")
