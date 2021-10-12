@@ -4,11 +4,8 @@
 import re
 import datetime
 import calendar
-import urllib.request 
-web = 'https://s3.amazonaws.com/tcmg476/http_access_log'
-urllib.request.urlretrieve(web,'./http_access_log.txt')
 
-
+main_file = open("http_access_log.txt")
 question_2 = open("requests_per_week.csv","w")
 
 pattern = re.compile("\d{2}/\D{3}/\d{4}")
